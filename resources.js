@@ -1,3 +1,13 @@
+const ASSETS = {
+    mockup:
+      'https://firebasestorage.googleapis.com/v0/b/production2hats.appspot.com/o/studentPortal%2Fassessment-web-design%2FMockup.png?alt=media&token=86310acc-1373-44a9-a3c9-ddd0580f9b11',
+      
+
+    hero:
+      'https://firebasestorage.googleapis.com/v0/b/production2hats.appspot.com/o/studentPortal%2Fassessment-web-design%2Fhero.png?alt=media&token=83f29b93-3c2e-4e50-8641-0eda16a0d960',
+
+  };
+  
   const ITEMS = [
     {
       title: 'Walnut Speakers & Amp',
@@ -96,17 +106,4 @@
         'https://firebasestorage.googleapis.com/v0/b/production2hats.appspot.com/o/studentPortal%2Fassessment-web-design%2Fcherry_wood.png?alt=media&token=a70a9ac4-21a1-4933-8a41-f214debcff57',
     },
   ];
-
-
-
-
-let wrapper = document.querySelector(".products");
-
-for(let i =0; i<12; i++){
-  let productHTML = `<div class="product">
-                    <img src=${ITEMS[i].image}>
-                    <h2 class="product-name">${ITEMS[i].title}</h2>
-                    <p class="product-price">$${ITEMS[i].price.toFixed(2)}</p>
-                  </div>` 
-  wrapper.innerHTML += productHTML;
-}
+  

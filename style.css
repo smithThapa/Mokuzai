@@ -1,7 +1,222 @@
-.wrapper{
-    display: grid;
-grid-template-columns: 100px 100px 100px 100px;
-  grid-gap: 10px;
-  background-color: #000;
-  color: #ef234d;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --matteblack: #524d4d;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.title-container {
+  margin: 1.2em;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr 10fr;
+  grid-template-areas:
+    "logo . buttons"
+    ". quote vertical-text";
+  background: url("https://firebasestorage.googleapis.com/v0/b/production2hats.appspot.com/o/studentPortal%2Fassessment-web-design%2Fhero.png?alt=media&token=83f29b93-3c2e-4e50-8641-0eda16a0d960");
+  color: white;
+  height: 50vh;
+}
+
+.logo {
+  grid-area: logo;
+  padding: 2.2em 0 0 1.8em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.logo-img {
+  height: auto;
+  width: 20px;
+  object-fit: contain;
+  margin-right: 5px;
+}
+
+.quote-container {
+  grid-area: quote;
+  align-self: center;
+}
+
+.buttons {
+  grid-area: buttons;
+  justify-self: end;
+  padding: 36px 30px 0 0;
+}
+
+.material-icons {
+  font-size: 2em;
+}
+
+.search-button {
+  margin-right: 5px;
+}
+
+.quote-container > p {
+  font-weight: lighter;
+  display: inline;
+}
+
+.quote {
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+.company-name {
+  display: inline;
+  font-weight: 200;
+  letter-spacing: 0.4em;
+  font-size: 1em;
+}
+
+.vertical-text {
+  grid-area: vertical-text;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 10px;
+  justify-self: end;
+  align-self: center;
+  padding: 16px 0 0 30px;
+}
+
+.author-name {
+  margin-top: 2em;
+  font-weight: lighter;
+  font-size: 0.8em;
+  word-spacing: 8px;
+}
+
+.author-name::before {
+  content: "——  ";
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style: none;
+  justify-content: center;
+  justify-self: center;
+  grid-gap: 30px;
+}
+
+.products-wrapper {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  background-color: #efefef;
+}
+
+.filters > li {
+  color: #919191;
+  padding-top: 4px;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.filters > .active-filter {
+  color: #545454;
+  border-top: 1px solid black;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1em;
+  width: 80vw;
+  justify-self: center;
+}
+
+.product {
+  border-color: black;
+  align-self: center;
+  justify-self: center;
+}
+
+.product img {
+  height: 200px;
+  width: 200px;
+}
+
+.product-name {
+  font-size: 1em;
+  color: var(--matteblack);
+  font-weight: 200;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.product-price {
+  color: #919191;
+  font-size: 0.9em;
+}
+
+.pages a {
+  color: var(--matteblack);
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+.pages {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  list-style: none;
+  justify-content: center;
+  justify-self: center;
+  grid-gap: 30px;
+  margin-bottom: 0;
+}
+
+.pages > .active-page {
+  color: #545454;
+  border-bottom: 1px solid var(--matteblack);
+}
+
+.footer li {
+  color: var(--matteblack);
+}
+
+.footer-wrapper {
+  display: grid;
+  height: 30vh;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  margin-top: 3em;
+  margin-left: 2em;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer .section-name {
+  margin-bottom: 1.5em;
+  font-size: 0.8em;
+  color: #acb0b0;
+}
+
+@media (max-width: 650px) {
+  .products {
+    width: 100vw;
+    grid-gap: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .title-container {
+    height: 12vh;
+  }
+
+  .quote-container,
+  .vertical-text {
+    display: none;
+  }
 }
